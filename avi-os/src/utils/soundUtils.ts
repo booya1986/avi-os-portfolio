@@ -321,9 +321,9 @@ export const soundManager = new SoundManager();
 
 // Convenience functions for common sounds
 export const playClickSound = () => soundManager.play('click');
-export const playOpenSound = () => soundManager.play('open', { volume: 0.8 });
-export const playCloseSound = () => soundManager.play('close', { volume: 0.8 });
-export const playHoverSound = () => soundManager.play('hover', { volume: 0.4 });
-export const playMinimizeSound = () => soundManager.play('minimize', { volume: 0.6 });
-export const playMaximizeSound = () => soundManager.play('maximize', { volume: 0.6 });
+export const playOpenSound = () => soundManager.play('open');
+export const playCloseSound = () => soundManager.play('close');
+export const playHoverSound = () => soundManager.play('hover');
+export const playMinimizeSound = () => soundManager.play('minimize');
+export const playMaximizeSound = () => soundManager.play('maximize');
 export const playTypingSound = (key: string) => soundManager.playTypingSound(key);

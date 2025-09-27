@@ -534,15 +534,16 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 
                 {/* Spotify Embed - Larger and better for episode browsing */}
                 <div className="absolute inset-2 rounded">
-                  <iframe 
-                    src="https://open.spotify.com/embed/show/0AIFnYGT4T0xGDgNUtvtCe?utm_source=generator&theme=0&t=0&height=400" 
-                    width="100%" 
-                    height="100%" 
-                    frameBorder="0" 
-                    allowfullscreen="" 
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                  <iframe
+                    src="https://open.spotify.com/embed/show/0AIFnYGT4T0xGDgNUtvtCe?utm_source=generator&theme=0&t=0&height=400"
+                    width="100%"
+                    height="100%"
+                    frameBorder={0}
+                    allowFullScreen
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
                     className="rounded"
+                    title="Spotify Podcast Player"
                   />
                 </div>
               </div>
@@ -1023,11 +1024,11 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1.3)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(-8px)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(-8px)');
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(0)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(0)');
                 }}
               />
             </button>
@@ -1058,11 +1059,11 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1.3)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(-8px)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(-8px)');
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(0)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(0)');
                 }}
               />
             </button>
@@ -1093,11 +1094,11 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1.3)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(-8px)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(-8px)');
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(0)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(0)');
                 }}
               />
             </button>
@@ -1128,11 +1129,11 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1.3)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(-8px)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(-8px)');
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(0)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(0)');
                 }}
               />
             </button>
@@ -1163,11 +1164,11 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1.3)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(-8px)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(-8px)');
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.setProperty('--scale', 'scale(1)');
-                  e.currentTarget.parentElement.style.transform = 'translateY(0)';
+                  e.currentTarget.parentElement?.style.setProperty('transform', 'translateY(0)');
                 }}
               />
             </button>

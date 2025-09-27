@@ -1,5 +1,5 @@
 import React from 'react';
-import { AppId } from '../store/useWindowStore';
+import type { AppId } from '../store/useWindowStore';
 import { Wrench, Palette, Code, Sparkles } from 'lucide-react';
 
 interface PlaceholderWindowProps {

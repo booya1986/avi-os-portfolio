@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Tv, Wrench, Palette, Code, Sparkles } from 'lucide-react';
-import { useWindowStore, AppId } from '../store/useWindowStore';
+import { useWindowStore, type AppId } from '../store/useWindowStore';
 
 const RAIL_BUTTONS = [
   {

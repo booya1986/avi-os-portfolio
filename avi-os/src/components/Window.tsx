@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { Rnd, DraggableData, ResizeDirection, Position } from 'react-rnd';
+import { Rnd, type DraggableData, type Position } from 'react-rnd';
 import { motion } from 'framer-motion';
 import { X, Maximize2, Minimize2 } from 'lucide-react';
-import { useWindowStore, WindowState } from '../store/useWindowStore';
+import { useWindowStore, type WindowState } from '../store/useWindowStore';
 
 interface WindowProps {
   window: WindowState;
@@ -36,15 +36,15 @@ export const Window: React.FC<WindowProps> = ({ window, children }) => {
     focusWindow(window.id);
   };
 
-  const handleDragStop = (e: MouseEvent, d: DraggableData) => {
+  const handleDragStop = (_e: any, d: DraggableData) => {
     updateWindow(window.id, { x: d.x, y: d.y });
   };
 
   const handleResizeStop = (
-    e: MouseEvent | TouchEvent,
-    direction: ResizeDirection,
+    _e: MouseEvent | TouchEvent,
+    _direction: any,
     ref: HTMLElement,
-    delta: { width: number; height: number },
+    _delta: { width: number; height: number },
     position: Position
   ) => {
     updateWindow(window.id, {

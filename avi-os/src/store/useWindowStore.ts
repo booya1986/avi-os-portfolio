@@ -3,6 +3,9 @@ import type { AppId, WindowState } from '../types';
 import { DEFAULT_WINDOW_SIZES, WINDOW_TITLES } from '../constants/apps';
 import { centerWindow, getViewportSize, getMaximizeBounds, getNextZIndex } from '../utils/windowUtils';
 
+// Re-export types for external use
+export type { AppId, WindowState } from '../types';
+
 interface WindowStore {
   windows: WindowState[];
   openWindow: (appId: AppId) => void;
