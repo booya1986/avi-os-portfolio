@@ -12,7 +12,7 @@ jobs:
     
     strategy:
       matrix:
-        node-version: [18.x, 20.x]
+        node-version: [20.x]
     
     steps:
     - name: Checkout
@@ -22,13 +22,18 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
         
-    - name: Install dependencies
-      run: npm ci
-      
+    - name: Clear npm cache and install dependencies
+      run: |
+        npm cache clean --force
+        rm -rf node_modules package-lock.json
+        npm install
+
     - name: Install workspace dependencies
-      run: npm run install:all
+      run: |
+        cd avi-os
+        rm -rf node_modules package-lock.json
+        npm install
       
     - name: Type check
       run: npm run type-check
@@ -42,7 +47,7 @@ jobs:
         NODE_ENV: production
         
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/main' && matrix.node-version == '20.x'
+      if: github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
