@@ -18,8 +18,16 @@ A complete desktop operating system experience running in the browser with profe
 **📱 Integrated Applications:**
 - 📺 **TV App**: Immersive retro television with working YouTube channel integration
 - 🌐 **Browser App**: Embedded web browsing with your personal blog (avilevi.co.il)
-- 📝 **Sticky Notes**: Realistic yellow notes with character counter and clear functionality  
+- 📝 **Sticky Notes**: Realistic yellow notes with character counter and clear functionality
 - 🎧 **iPod Podcast Player**: Authentic iPod design with Spotify integration for episode browsing
+- 💬 **Chat Interface**: Demo chat interface showcasing conversational UI patterns
+
+**✨ Production Features:**
+- 🔊 **Interactive Sound Effects**: Audio feedback for clicks, hovers, and interactions
+- 🎮 **Drag & Resize Windows**: Full window management with state persistence
+- 📱 **Responsive Design**: Optimized for desktop and large tablet screens
+- 🚀 **Fast Loading**: Optimized assets and efficient bundle splitting
+- 🎯 **Cross-browser Compatible**: Works in all modern browsers
 
 **🎨 Design Excellence:**
 - **Glassmorphism UI**: Advanced backdrop blur with realistic lighting effects
@@ -29,7 +37,7 @@ A complete desktop operating system experience running in the browser with profe
 
 **Tech Stack:** React 18, TypeScript, Vite, Tailwind CSS, Custom Animations
 
-📁 **[View Project](./avi-os/)** | 🌐 **[Live Demo](#)** | 📖 **[Documentation](./docs/planning.md)**
+📁 **[View Project](./avi-os/)** | 🌐 **[Live Demo](https://booya1986.github.io/avi-os-portfolio/)** | 📖 **[Documentation](./docs/planning.md)**
 
 ## 🛠️ Development
 
@@ -87,24 +95,30 @@ This portfolio showcases:
 
 ## 🌐 Deployment
 
+### Live Site
+🚀 **[https://booya1986.github.io/avi-os-portfolio/](https://booya1986.github.io/avi-os-portfolio/)**
+
+### GitHub Pages Deployment
+This project is automatically deployed to GitHub Pages using GitHub Actions:
+
+- **Automatic Builds**: Every push to `main` triggers a new deployment
+- **GitHub Actions**: Handles dependencies, linting, TypeScript compilation, and deployment
+- **Asset Optimization**: Vite optimizes images and assets for production
+- **Performance**: Fast loading with proper asset caching
+
+### Local Development
+```bash
+cd avi-os
+npm install
+npm run dev
+# Visit http://localhost:5173
+```
+
 ### Production Build
 ```bash
 cd avi-os
 npm run build
 npm run preview
-```
-
-### Deploy to Vercel
-```bash
-npm install -g vercel
-vercel --prod
-```
-
-### Deploy to Netlify
-```bash
-npm install -g netlify-cli
-npm run build
-netlify deploy --prod --dir=dist
 ```
 
 ## 🤝 Contact
