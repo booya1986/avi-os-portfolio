@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { 
   playClickSound, 
   playOpenSound, 
@@ -199,7 +199,7 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
     focusWindow(windowId);
   };
 
-  const handleMouseMove = (e: MouseEvent) => {
+  const handleMouseMove = useCallback((e: MouseEvent) => {
     if (dragState.isDragging && dragState.windowId) {
       const deltaX = e.clientX - dragState.startX;
       const deltaY = e.clientY - dragState.startY;
@@ -249,9 +249,9 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
         return { ...w, width: newWidth, height: newHeight, x: newX, y: newY };
       }));
     }
-  };
+  }, [dragState, resizeState, setWindows]);
   
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     setDragState({
       isDragging: false,
       windowId: null,
@@ -269,7 +269,7 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
       windowStartHeight: 0,
       resizeDirection: '',
     });
-  };
+  }, [setDragState, setResizeState]);
   
   React.useEffect(() => {
     if (dragState.isDragging || resizeState.isResizing) {
@@ -280,9 +280,9 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
         document.removeEventListener('mouseup', handleMouseUp);
       };
     }
-  }, [dragState, resizeState]);
+  }, [dragState, resizeState, handleMouseMove, handleMouseUp]);
   
-  const renderWindowContent = (window: any) => {
+  const renderWindowContent = (window: WindowState) => {
     switch (window.type) {
       case 'browser':
         return (
@@ -351,10 +351,10 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
             </div>
           </div>
         );
-      case 'notes':
+      case 'notes': {
         const currentText = noteTexts[window.id] || '';
         const characterCount = currentText.length;
-        
+
         return (
           <div className="h-full w-full relative bg-yellow-200 overflow-hidden rounded-2xl">
             {/* Sticky note header with window controls */}
@@ -462,7 +462,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
             />
           </div>
         );
-case 'ipod':
+      }
+      case 'ipod':
         return (
           <div className="h-full w-full relative overflow-hidden rounded-3xl" style={{
             background: 'linear-gradient(145deg, #f0f0f0 0%, #e8e8e8 50%, #d0d0d0 100%)',

@@ -19,7 +19,7 @@ class SoundManager {
 
   private initializeAudioContext() {
     try {
-      this.audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
+      this.audioContext = new (window.AudioContext || (window as typeof window & { webkitAudioContext: typeof AudioContext }).webkitAudioContext)();
     } catch (error) {
       console.warn('Web Audio API not supported:', error);
       this.enabled = false;
@@ -247,7 +247,7 @@ class SoundManager {
     oscillator.stop(now + duration);
   }
 
-  public async play(soundName: string, config: SoundConfig = {}) {
+  public async play(soundName: string) {
     if (!this.enabled || !this.audioContext) return;
 
     await this.resumeAudioContext();

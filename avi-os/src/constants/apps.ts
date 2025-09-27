@@ -1,5 +1,5 @@
 import { Tv, Wrench, Palette, Code, Sparkles } from 'lucide-react';
-import type { AppId, AppConfig, RailButton } from '../types';
+import type { AppId, RailButton } from '../types';
 
 // Default window sizes for each app
 export const DEFAULT_WINDOW_SIZES: Record<AppId, { width: number; height: number }> = {

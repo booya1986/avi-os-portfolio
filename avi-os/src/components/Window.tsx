@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Rnd } from 'react-rnd';
+import { Rnd, DraggableData, ResizeDirection, Position } from 'react-rnd';
 import { motion } from 'framer-motion';
 import { X, Maximize2, Minimize2 } from 'lucide-react';
 import { useWindowStore, WindowState } from '../store/useWindowStore';
@@ -20,13 +20,14 @@ export const Window: React.FC<WindowProps> = ({ window, children }) => {
       }
     };
 
-    if (windowRef.current) {
-      windowRef.current.addEventListener('keydown', handleKeyDown);
+    const currentWindowRef = windowRef.current;
+    if (currentWindowRef) {
+      currentWindowRef.addEventListener('keydown', handleKeyDown);
     }
 
     return () => {
-      if (windowRef.current) {
-        windowRef.current.removeEventListener('keydown', handleKeyDown);
+      if (currentWindowRef) {
+        currentWindowRef.removeEventListener('keydown', handleKeyDown);
       }
     };
   }, [window.id, closeWindow]);
@@ -35,16 +36,16 @@ export const Window: React.FC<WindowProps> = ({ window, children }) => {
     focusWindow(window.id);
   };
 
-  const handleDragStop = (e: any, d: any) => {
+  const handleDragStop = (e: MouseEvent, d: DraggableData) => {
     updateWindow(window.id, { x: d.x, y: d.y });
   };
 
   const handleResizeStop = (
-    e: any,
-    direction: any,
+    e: MouseEvent | TouchEvent,
+    direction: ResizeDirection,
     ref: HTMLElement,
-    delta: any,
-    position: any
+    delta: { width: number; height: number },
+    position: Position
   ) => {
     updateWindow(window.id, {
       x: position.x,
