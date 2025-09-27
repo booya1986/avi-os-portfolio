@@ -1,0 +1,56 @@
+{
+  "name": "avi-levi-portfolio",
+  "version": "1.0.0",
+  "description": "Avi Levi's interactive portfolio featuring innovative React projects",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "avi-os"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=avi-os",
+    "build": "npm run build --workspace=avi-os",
+    "preview": "npm run preview --workspace=avi-os",
+    "lint": "npm run lint --workspace=avi-os",
+    "lint:fix": "npm run lint:fix --workspace=avi-os",
+    "type-check": "npm run type-check --workspace=avi-os",
+    "format": "npm run format --workspace=avi-os",
+    "clean": "npm run clean --workspace=avi-os",
+    "install:all": "npm install && npm install --workspace=avi-os",
+    "test": "npm run test --workspace=avi-os",
+    "deploy": "npm run build && npm run preview"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "vite",
+    "browser-os",
+    "interactive",
+    "modern-web"
+  ],
+  "author": {
+    "name": "Avi Levi",
+    "email": "contact@avilevi.com",
+    "url": "https://www.youtube.com/@avilevi86"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/avilevi/portfolio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avilevi/portfolio/issues"
+  },
+  "homepage": "https://avilevi.github.io/portfolio",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.1.13"
+  }
+}
