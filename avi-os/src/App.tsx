@@ -1,14 +1,22 @@
 import React, { useState, useRef, useCallback } from 'react';
-import { 
-  playClickSound, 
-  playOpenSound, 
-  playCloseSound, 
-  playHoverSound, 
-  playMinimizeSound, 
+import {
+  playClickSound,
+  playOpenSound,
+  playCloseSound,
+  playHoverSound,
+  playMinimizeSound,
   playMaximizeSound,
   playTypingSound,
-  soundManager 
+  soundManager
 } from './utils/soundUtils';
+
+// Import images
+import backgroundImage from '/daniel-leone-v7daTKlZzaw-unsplash.jpg';
+import tvIcon from '/tv2.png';
+import siteIcon from '/site.png';
+import noteIcon from '/note.png';
+import ipodIcon from '/ipod.png';
+import chatIcon from '/chat.png';
 
 interface WindowState {
   id: string;
@@ -941,7 +949,7 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: 'url(/daniel-leone-v7daTKlZzaw-unsplash.jpg)',
+          backgroundImage: `url(${backgroundImage})`,
         }}
       >
         {/* Overlay for better contrast */}
@@ -1012,8 +1020,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 transformOrigin: 'center bottom'
               }}
             >
-              <img 
-                src="/tv2.png" 
+              <img
+                src={tvIcon} 
                 alt="TV" 
                 className="transition-all duration-200 ease-out"
                 style={{ 
@@ -1047,8 +1055,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 transformOrigin: 'center bottom'
               }}
             >
-              <img 
-                src="/site.png" 
+              <img
+                src={siteIcon} 
                 alt="Browser" 
                 className="transition-all duration-200 ease-out"
                 style={{ 
@@ -1082,8 +1090,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 transformOrigin: 'center bottom'
               }}
             >
-              <img 
-                src="/note.png" 
+              <img
+                src={noteIcon} 
                 alt="Notes" 
                 className="transition-all duration-200 ease-out"
                 style={{ 
@@ -1117,8 +1125,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 transformOrigin: 'center bottom'
               }}
             >
-              <img 
-                src="/ipod.png" 
+              <img
+                src={ipodIcon} 
                 alt="iPod" 
                 className="transition-all duration-200 ease-out"
                 style={{ 
@@ -1152,8 +1160,8 @@ width: type === 'tv' ? 1000 : type === 'browser' ? 1000 : type === 'notes' ? 400
                 transformOrigin: 'center bottom'
               }}
             >
-              <img 
-                src="/chat.png" 
+              <img
+                src={chatIcon} 
                 alt="Chat" 
                 className="transition-all duration-200 ease-out"
                 style={{ 
